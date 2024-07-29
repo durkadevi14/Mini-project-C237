@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+    <h1><%= product.productName %></h1>
+    <p><%= product.description %></p>
+    <p>Price: <%= product.price %></p>
+    <p>Stock: <%= product.number_of_stock %></p>
+    <form action="/orderconfirmation" method="POST">
+        <input type="hidden" name="product_id" value="<%= product.product_id %>">
+        <label for="order_quantity">Quantity:</label>
+        <input type="number" id="order_quantity" name="order_quantity" required>
+        <br>
+        <label for="customer_name">Name:</label>
+        <input type="text" id="customer_name" name="customer_name" required>
+        <br>
+        <label for="shipping_address">Address:</label>
+        <textarea id="shipping_address" name="shipping_address" required></textarea>
+        <br>
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+</html>
+

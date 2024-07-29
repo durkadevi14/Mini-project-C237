@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Shipping</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Shipping</h1>
+    </header>
+    <main>
+        <section class="products">
+            <% products.forEach(product => { %>
+                <div class="product">
+                    <img src="/images/<%= product.product_id %>.jpg" alt="<%= product.productName %>" onerror="this.onerror=null;this.src='/images/default.jpg';">
+                    <h2><%= product.productName %></h2>
+                    <p>Price: $<%= product.price %></p>
+                    <p>Stock: <%= product.number_of_stock %></p>
+                    <a href="/product/<%= product.product_id %>" class="details-button">View Details</a>
+                </div>
+            <% }) %>
+        </section>
+    </main>
+</body>
+</html>
+
+
+    
+

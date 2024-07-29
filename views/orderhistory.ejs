@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+</head>
+<body>
+    <h1>Order History</h1>
+    <% if (orders.length > 0) { %>
+        <ul>
+            <% orders.forEach(order => { %>
+                <li>
+                    <p>Order ID: <%= order.order_id %></p>
+                    <p>Product: <%= order.productName %></p>
+                    <p>Quantity: <%= order.order_quantity %></p>
+                    <p>Total Cost: $<%= order.total_cost %></p>
+                    <p>Status: <%= order.order_status %></p>
+                    <p>Date: <%= order.date_of_order %></p>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>No orders found.</p>
+    <% } %>
+    <a href="/shop">Back to Shop</a>
+</body>
+</html>
